@@ -1,2 +1,2 @@
-# phys_cpu_projects
-Physical Computing Projects class repo (notes, examples, etc.)
+# Physical Computing Projects
+*Casey Anderson, Summer 2015*
