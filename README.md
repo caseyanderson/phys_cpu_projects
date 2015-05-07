@@ -1,5 +1,5 @@
 # Physical Computing Projects
-### Art Center College of Design, HSCI-232-01
+### HSCI-232-01, Art Center College of Design
 
 **Class Meetings:**  Mondays, 01:00PM - 03:50PM ANNX-A8 / ELL-203
 
@@ -8,12 +8,12 @@
 **Email:** casey.anderson@artcenter.edu
 
 
-### Course Description
+### Description
 This project-oriented class leads students through several open-ended, small-to-mid-scale projects. Students will explore interaction, environmental/ambient sensing strategies, and more complex digital electronics systems as a means to increase their understanding of contemporary approaches to electronics and computation. Regular critiques will provide an opportunity for students to share their individual research with their colleagues as well as receive direct feedback from the instructor.
 
 
-### Class Goals
-Upon successful completion of this course, students will gain facility in/and understanding of the following topics:
+### Goals
+Upon successful completion of this course, students will gain facility in/an understanding of the following topics:
 * Electronics
 * Programming (Arduino, Python)
 * Hybrid Digital/Analog Systems (with a focus on Arduino)
@@ -27,5 +27,5 @@ Upon successful completion of this course, students will gain facility in/and un
 *I am not requiring a textbook as acknowledgement that students will likely need to purchase additional materials to complete projects.*
 
 
-### Classroom Attendance Policy
-Absences will be excused if and only if I am notified via emailed prior to the start of class. Failure to do so will result in an unexcused absence. If your absence is excused, we will work out a way for you to make up as much of the in-class activities as possible.
+### Attendance Policy
+Absences will be excused if and only if I am notified via email prior to the beginning of class. Failure to do so will result in an unexcused absence. If your absence is excused, we will work out a way for you to make up as much of the in-class activities as possible.
