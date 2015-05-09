@@ -26,6 +26,17 @@ Upon successful completion of this course, students will gain facility in/an und
 
 *I am not requiring a textbook as acknowledgement that students will likely need to purchase additional materials to complete projects.*
 
+### Grading Policy
+Grades will be calculated based on the following distribution:
+
+* Classroom Attendance = 50%
+* In-class projects and lab assignments = 25%
+* Final project = 25%
 
 ### Attendance Policy
-Absences will be excused if and only if I am notified via email prior to the beginning of class. Failure to do so will result in an unexcused absence. If your absence is excused, we will work out a way for you to make up as much of the in-class activities as possible.
+Attending class is critical to learning this material. We have a lot to cover and will have to move pretty quickly to get through it. Attendance, then, is heavily weighted (see above).
+
+Absences will be excused if and only if I am notified via email prior to the beginning of class. Failure to do so will result in an unexcused absence. If your absence is excused, we will work out a way for you to make up as much of the in-class activities as possible. 3 unexcused absences will result in an automatic F in this class.
+
+### Class Schedule
+This is a 12 week class, however one of our meetings falls on a holiday (memorial day, week 3), so our last meeting will be held during week 13.
