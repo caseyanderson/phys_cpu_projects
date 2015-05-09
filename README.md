@@ -36,7 +36,7 @@ Grades will be calculated based on the following distribution:
 
 
 ### Attendance Policy
-Attending class is critical to learning this material. We have a lot to cover and will have to move pretty quickly to get through it. Attendance, then, is heavily weighted (see above).
+Attending class is critical to learning this material. We have a lot to cover and will have to move pretty quickly to get through it all. Attendance, then, is heavily weighted (see above).
 
 Absences will be excused if and only if I am notified via email prior to the beginning of class. Failure to do so will result in an unexcused absence. 3 unexcused absences will result in an automatic F in this class. If your absence is excused, we will work out a way for you to make up as much of the in-class activities as possible.
 
