@@ -44,8 +44,23 @@ grep 'this' test.txt
 # and also returns 'this is even more text'
 grep 'more' test.txt
 # returns 'this is even more text'</pre>
-<br/>Though you will begin to memorize some of these commands through frequent use, it is normal to bookmark an online "cheat sheet" to help jog your memory. <a href="http://www.git-tower.com/blog/command-line-cheat-sheet" target="_blank">Here</a> is a Linux Bash Shell cheat sheet.
+<br/>Though you will begin to memorize some of these commands through frequent use, it is normal to bookmark an online "cheat sheet" to help jog your memory. <a href="http://cli.learncodethehardway.org/bash_cheat_sheet.pdf" target="_blank">Here</a> is a Linux Bash Shell cheat sheet.
 <h2>LAB: Version Control with Github</h2>
+All of the materials for this class live in two places: this website, and <a href="https://github.com/caseyanderson/phys_cpu_projects" target="_blank">this</a> GitHub repository. Following the completion of this lab, it will be your responsibility to keep up to date with the classroom materials as they are added.
+<br/>Start by signing up for a GitHub account (it's free) <a href="https://github.com/join" target="_blank">here</a>.
+<br/>Next, go <a href="https://git-scm.herokuapp.com/downloads" target="_blank">here</a> to download and install the latest version of Git.
+<br/>At the terminal, tell git your username by entering <span class="lang:sh decode:true  crayon-inline " >git config --global user.name "USERNAME"</span>.
+<br/>Then tell git your email address (the one associated with your GitHub account) by entering <span class="lang:sh decode:true  crayon-inline " >git config --global user.email "YOUR EMAIL ADDRESS"</span>.
+<br/>In the next sequence, we are going to move inside of the NEWDIRECTORY folder we made in the first lab and clone the class repository:
+<pre class="lang:sh decode:true " >
+cd NEWDIRECTORY
+git clone https://github.com/caseyanderson/phys_cpu_projects.git
+#git clone copies the repository into a new directory in this folder
+cd phys_cpu_projects
+git log # shows the history of this repository
+# type q to exit log
+git pull # check for updates from source
+# if there are updates, download them</pre>
+<br/>At least once a week you should <span class="lang:sh decode:true  crayon-inline " >git pull</span> inside this directory to stay up to date.
 <h2>Homework</h2>
-<ul><li>purchase an <a href="https://www.adafruit.com/products/68"target="_blank">Arduino Starter Pack</a> (preferred) or <a href="https://www.adafruit.com/products/193" target="_blank">Arduino Budget Pack</a></li>
-<li>add x lines to the <a href="http://physcpu.caseyanderson.com/index.php/syllabus/" target="_blank">short story</a> repository.</li></ul>
+<ul><li>purchase an <a href="https://www.adafruit.com/products/68"target="_blank">Arduino Starter Pack</a> (preferred) or <a href="https://www.adafruit.com/products/193" target="_blank">Arduino Budget Pack</a></li></ul>
