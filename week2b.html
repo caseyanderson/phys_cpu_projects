@@ -1,13 +1,11 @@
 <h2>Intro to Arduino</h2>
-<br/>note: unless otherwise noted, these examples come packaged with the arduino software
-<br/>For a comprehensive overview of the Uno, go [here](http://arduino.cc/en/Main/ArduinoBoardUno).
-<br/>The Uno is based on the ATmega328, the datasheet for which you can find [here](http://www.atmel.com/Images/doc8161.pdf).
+<br/>note: unless otherwise noted, these examples come packaged with the arduino software.
+<br/>For a comprehensive overview of the Uno, go <a href="http://arduino.cc/en/Main/ArduinoBoardUno" target="_blank">here</a>.
+<br/>The Uno is based on the ATmega328, the datasheet for which you can find <a href="http://www.atmel.com/Images/doc8161.pdf" target="_blank">here</a>.
 <br/>Get used to looking for datasheets. They are generally published by the manufacturer as a complete resource for how a particular Integrated Circuit functions, containing things like detailed information regarding Current, Voltage, etc. features/requirements, as well as the role of each pin. Any time you are trying to build something that requires an IC you have not used before your first step should be to look for the datasheet. This is almost always accomplished via a simple Duckduckgo search (example: ATmega328 datasheet).
-
-### BareMinimum
+<h2>BareMinimum</h2>
 Here is the basic structure for almost every Arduino program you will need to implement:
-```arduino
-void setup() {
+<br/><pre class="lang:arduino decode:true " >void setup() {
   // put your setup code here, to run once:
 
 }
@@ -16,7 +14,8 @@ void loop() {
   // put your main code here, to run repeatedly:
 
 }
-```
+</pre>
+
 The lines of code that start with two forward slashes are ignored by the Arduino and are known as comments. You can use these to leave yourself notes, or to explain parts of your code to other users (which is considered best practice).
 
 ```void setup()``` vs. ```void loop()```
