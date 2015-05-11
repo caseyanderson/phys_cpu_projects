@@ -3,4 +3,4 @@
 
 **Class Website:** http://physcpu.caseyanderson.com/
 
-This repo will contain the html code from the website as well as any longer sample code examples.
+This repo will contain the html code from the website as well as any longer code examples.
