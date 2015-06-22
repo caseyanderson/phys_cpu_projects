@@ -1,0 +1,39 @@
+<h2>LAB: delay() versus millis()</h2>
+<br/>In today's lab we will be taking a closer look at the difference between the two main ways to work with time in Arduino: <span class="lang:arduino decode:true  crayon-inline " >delay()</span> and <span class="lang:arduino decode:true  crayon-inline " >millis()</span>.
+<br/><ul><li>First wire up a sensor of your choosing such that you can monitor the value of the sensor via the Serial monitor.</li>
+<li>Once you have that working, add a second sensor and print that value to the Serial monitor.</li></ul>
+<br/>Now try changing the value on each sensor in quick succession. What do you notice about the relationship between your input to the sensor (i.e. changing it) and what is shown in the Serial monitor?
+<br/>Here is another example of how to work with time in Arduino, and it doesn't have the same issues as <span class="lang:arduino decode:true  crayon-inline " >delay()</span>.
+
+<pre class="lang:arduino decode:true " >/*minimal millis example
+this is the bare minimum to get a timer in arduino
+*/
+
+int previousMillis = 0;
+
+long interval = 1000;// we want to know when 1 second has passed
+
+void setup(){
+  //since we are only using a timer right now, there is nothing here (other than serial)
+  Serial.begin(9600);
+}
+
+void loop(){
+ unsigned long currentMillis = millis();// how long has the program been running? store that length in currentMillis
+
+ //check to see if we have run out of time
+ if( currentMillis - previousMillis > interval ) {
+   previousMillis = currentMillis;
+
+   Serial.print( "it has been " );
+   Serial.print( String(interval) );
+   Serial.println( " milliseconds!" );
+ } else {
+   Serial.print( "current time = " );
+   Serial.println( String(currentMillis) );
+ }
+}
+</pre>
+<br/>Things to try next (choose one and prove via demo):
+<ul><li>use <span class="lang:arduino decode:true  crayon-inline " >millis()</span> to setup a relationship between two events (see if/else structure in <span class="lang:arduino decode:true  crayon-inline " >void loop()</span> in the above example). In other words, when the timer has run out, x happens, whereas all other times y happens.</li>
+<li>sequence two events with <span class="lang:arduino decode:true  crayon-inline " >millis()</span> (example, first LED number 1 lights up, then LED number 2 lights up, then timer resets and repeats).</li></ul>
