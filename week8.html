@@ -66,3 +66,36 @@ void loop()
 }
 </pre>
 <br/>So this blinks one LED, which is fine, but what if we want to blink two LEDs via timer?
+<br/>In order to do this we are going to write a blink function. There are 2 functions that we talk about all the time in Arduino:  <span class="lang:arduino decode:true  crayon-inline " >void setup()</span>  and <span class="lang:arduino decode:true  crayon-inline " >void loop()</span>. The prefix <span class="lang:arduino decode:true  crayon-inline " >void</span> is how you know that <span class="lang:arduino decode:true  crayon-inline " >setup()</span> and <span class="lang:arduino decode:true  crayon-inline " >loop()</span> are functions (and, as a reminder, a function is something that performs an action [sometimes I like to think of it as a verb]).
+<br/>Typically one assumes that a function is capable of accepting an input and producing some output (generally the output is dictated in part by what the input was set to). For a more concrete example, let's start by writing a function that will allow us to print two numbers to the Serial monitor.
+
+
+<pre class="lang:arduino decode:true " >/*
+ * function demo
+ * Casey Anderson, SU2015
+ *
+ * prints two numbers passed to a function as parameters
+ *
+ * message format: number \t number \nl
+ */
+
+void setup(){
+
+    Serial.begin(9600);
+
+}
+
+void loop(){
+    function(1000, 13);
+    delay(3);
+}
+
+void function(int interval, int pin){
+
+    Serial.print(interval);
+    Serial.print("\t");
+    Serial.println(pin);
+
+}
+
+</pre>
