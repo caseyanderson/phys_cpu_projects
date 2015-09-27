@@ -1,0 +1,90 @@
+<h2>LAB: Voltage Dividers / Sensors</h2>
+<br/>A voltage divider is any circuit that produces an output that is a fraction of its input. For example:
+<br/><a href="http://physcpu.caseyanderson.com/wp-content/uploads/2015/05/voltage_divider.png"><img src="http://physcpu.caseyanderson.com/wp-content/uploads/2015/05/voltage_divider.png" alt="voltage_divider" width="178" height="168" class="aligncenter size-full wp-image-159" /></a>
+<br/>The above diagram represents the most basic way to use two resistors (labeled as Z1 and Z2) to take some changing voltage (Vin) and output a fraction of it (Vout). The amount of Vin that is output at Vout depends on the values of the two resistors. This is the basic wiring pattern for almost any sensor input into a microcontroller.
+<br/>You are probably wondering how to calculate the value of R1 and R2 (fyi: in this case, I am using Z and R interchangeably, but generally Z refers to impedance and R refers to resistance) such that you can get a specific Vout. Here is the formula:
+<br/><a href="http://physcpu.caseyanderson.com/wp-content/uploads/2015/05/voltage_divider_formula.jpg"><img src="http://physcpu.caseyanderson.com/wp-content/uploads/2015/05/voltage_divider_formula-300x100.jpg" alt="voltage_divider_formula" width="300" height="100" class="aligncenter size-medium wp-image-163" /></a>
+
+<h2>Sensors</h2>
+Let's start with a Potentiometer.
+<br/>You can think of this as having two ears and a nose. The nose is the output, the ears are inputs. The only thing that matters regarding which ear you use is which direction you turn the knob to increase/decrease resistance.
+<br/>So, for a pot, to interface with our Arduino:
+<ul><li>Nose to any input (example: <span class="lang:arduino decode:true  crayon-inline " >A0</span>)</li>
+<li>Ear 1 to ground</li>
+<li>Ear 2 to 5V or 3.3V</li></ul>
+<br/>Attach a potentiometer to your Arduino and copy the code below into a new window:
+<br/><pre class="lang:arduino decode:true " >//Potentiometer testing sketch.
+
+int potPin = 0; // Nose of pot is connected to analog 0
+int LEDpin = 11;      // connect Red LED to pin 11 (PWM pin)
+int potReading;      // the analog reading from the Potentiometer
+int LEDbrightness;
+
+void setup() {
+  Serial.begin(9600);   // We'll send debugging information via the Serial monitor
+  pinMode(LEDpin, OUTPUT);
+}
+
+void loop() {
+  potReading = analogRead(potPin);
+  Serial.print("Analog reading = ");
+  Serial.println(potReading);
+
+  // we'll need to change the range from the analog reading (0-1023) down to the range
+  // used by analogWrite (0-255) with map!
+
+  LEDbrightness = map(potReading, 0, 1023, 0, 255);
+
+  analogWrite(LEDpin, LEDbrightness);
+  Serial.print( "LED value = " );
+  Serial.println( LEDbrightness );
+  delay(10);
+}
+</pre>
+<br/>All of this should look more or less familiar, with the exception of <span class="lang:arduino decode:true  crayon-inline " >Serial.begin()</span>, etc.
+<br/>The <span class="lang:arduino decode:true  crayon-inline " >Serial</span> class is used for communication between Arduino and a computer. <span class="lang:arduino decode:true  crayon-inline " >Serial</span> enables you to do a lot of things, but in this case it is going to allow us to monitor the value of the potentiometer. We set the serial data rate in bits per second to start serial transmission. Generally, 9600 will be a perfectly fine <span class="lang:arduino decode:true  crayon-inline " >BAUD</span> rate to use (particularly when starting out).
+<br/><span class="lang:arduino decode:true  crayon-inline " >Serial.begin()</span> / <span class="lang:arduino decode:true  crayon-inline " >println()</span> prints the incoming values from the potentiometer to the Serial Monitor.
+<br/>Lastly, we are mapping the incoming pot reading from 0 - 1023 to 0 - 255. Any time you need to change the data range of one variable to some other range and do not feel like doing the math, you can simply use <span class="lang:arduino decode:true  crayon-inline " >map()</span>.
+<br/>We can use this basic framework for most other sensor input, the only thing that will change is how you attach the sensor to the Arduino.
+
+Download the pdf (<a href="http://physcpu.caseyanderson.com/sensor_workshop_notes.pdf" target="_blank">here</a>) and try to use the code above with other sensors.
+<br/>As an example, modifying our potentiometer code to utilize a flex sensor:
+<br/><pre class="lang:arduino decode:true " >// Flex sensor test program
+
+// Sensor pin - GND
+// Sensor pin - Analog In 0, with 10K resistor to +5V
+
+// INSTRUCTIONS:
+// Upload this sketch to your Arduino, then activate the Serial Monitor
+// (set the Serial Monitor to 9600 baud)
+
+int LEDpin = 11;      // connect Red LED to pin 11 (PWM pin)
+int LEDbrightness;
+
+void setup()
+{
+  // initialize serial communications
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  int sensor, degrees;
+
+  // read the voltage from the voltage divider (sensor plus resistor)
+  sensor = analogRead(0);
+  degrees = map(sensor, 768, 853, 0, 90);
+
+  LEDbrightness = map( sensor, 768, 853, 0, 255 )l
+  analogWrite(LEDpin, LEDbrightness);
+
+  // print out the result
+  Serial.print("analog input: ");
+  Serial.print(sensor,DEC);
+  Serial.print("   degrees: ");
+  Serial.println(degrees,DEC);
+
+  // pause before taking the next reading
+  delay(10);
+}
+</pre>
