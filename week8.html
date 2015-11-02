@@ -1,0 +1,75 @@
+<h2>functions</h2>
+There are 2 functions that we talk about all the time in Arduino:  <span class="lang:arduino decode:true  crayon-inline " >void setup()</span>  and <span class="lang:arduino decode:true  crayon-inline " >void loop()</span>. The prefix <span class="lang:arduino decode:true  crayon-inline " >void</span> is how you know that <span class="lang:arduino decode:true  crayon-inline " >setup()</span> and <span class="lang:arduino decode:true  crayon-inline " >loop()</span> are functions (and, as a reminder, a function is something that performs an action [sometimes I like to think of it as a verb]).
+<br/>Typically one assumes that a function is capable of accepting an input and producing some output (generally the output is dictated in part by what the input was set to). For a more concrete example, let's start by writing a function that will allow us to print two numbers to the Serial monitor.
+
+
+<pre class="lang:arduino decode:true " >/*
+ * function demo
+ * Casey Anderson, SU2015
+ *
+ * prints two numbers passed to a function as parameters
+ *
+ * message format: number \t number \nl
+ */
+
+void setup(){
+
+    Serial.begin(9600);
+
+}
+
+void loop(){
+    function(1000, 13);
+    delay(3);
+}
+
+void function(int interval, int pin){
+
+    Serial.print(interval);
+    Serial.print("\t");
+    Serial.println(pin);
+
+}
+
+</pre>
+<br/>Arduino expects to see both  <span class="lang:arduino decode:true  crayon-inline " >void setup()</span> and <span class="lang:arduino decode:true  crayon-inline " >void loop()</span>, but it does not necessarily expect to see a user-defined function unless we tell it about these additional functions. In order to do so, we would <strong>declare</strong> the function at the bottom of the window (take a look to see where I have the definition of <span class="lang:arduino decode:true  crayon-inline " >void function()</span>).
+<br/>We declare the function by prepending it with <span class="lang:arduino decode:true  crayon-inline " >void</span> and then define the function by telling Arduino what it can do. Once we have done that, we can then use the function in <span class="lang:arduino decode:true  crayon-inline " >void loop()</span>. If we do not define the function, Arduino will not know what we mean by, in this case, <span class="lang:arduino decode:true  crayon-inline " >function(1000, 13)</span> and will throw an error to communicate that to you.
+<br/>Let's make this a little more interesting by using a random number generator to change the numbers in our Serial message on every pass through the loop.
+
+
+<pre class="lang:arduino decode:true " >/*
+ * function demo
+ * Casey Anderson, SU2015
+ *
+ * prints two numbers passed to a function as parameters
+ *
+ * message format: number \t number \nl
+ */
+
+int n1, n2;
+
+void setup(){
+
+    Serial.begin(9600);
+
+}
+
+void loop(){
+
+    n1 = random( 200, 2000);
+    n2 = random(200, 2000);
+
+    function(n1, n2);
+
+    delay(3);
+}
+
+void function(int interval, int pin){
+
+    Serial.print(interval);
+    Serial.print("\t");
+    Serial.println(pin);
+
+}
+</pre>
+<br/>Woo, random numbers separated by a tab!
